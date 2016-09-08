@@ -17,3 +17,15 @@ require_once KLASIR_CLASSLARIM.Fonksiyonlar.php;
 $db = new Veritabani;
 $gvn = new Guvenlik;
 $fonk = new Fonksiyonlar;
+
+//ayarlar
+
+$ayarlar = $db->query($db->fetch(ayarlar));
+
+//temel ayarlar.
+define("SITE_ADI", $ayarlar->site_adi);
+define("SITE_ADRESI", $ayarlar->site_adresi);
+define("SITE_ACIKLAMA", $ayarlar->site_aciklama);
+define("SITE_ANAHTAR_KELIMELERI", $ayarlar->site_anahtar_kelimeleri);
+define("SITE_TEMASI", $ayarlar->site_temasi);
+define("SITE_MAIL", $ayarlar->site_mail);
