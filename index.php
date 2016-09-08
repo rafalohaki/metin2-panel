@@ -12,11 +12,11 @@ else
 {
   if($ayarlar->404 == true)
   {
-    require_once ./errors/404.htm
+    require_once('errors/404.htm')
   }
   else
   {
-    require_once "moduller/anasayfa.php";
+    require_once('moduller/anasayfa.php');
     $icerik = new Anasayfa;
     $icerik->icerik();
   }
@@ -24,6 +24,18 @@ else
 ?>
 
 <html>
-
+<head>
+  <title>Metin2 Title</title>
+</head>
+<body>
+  <head>
+    <div id="logo">
+      logo gelecek
+    </div>
+    <div id="ust_menu">
+      Menü gelecek
+    </div>
+  </head>
+</body>
 
 </html>
