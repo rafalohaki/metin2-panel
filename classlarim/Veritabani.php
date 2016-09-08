@@ -67,6 +67,7 @@ class Veritabani
   
   /**
    * Veritabanına veri kaydetmek için kullanılır.
+   * 
    * $db => string
    * $degerler => array
    * 
@@ -75,12 +76,12 @@ class Veritabani
   public function insert($db, $degerler = array())
   {
     /**
-     * $key = sutün adı.
-     * $value = sutüne işlenecek veri.
+     * $key = sütun adı.
+     * $value = sütune işlenecek veri.
      */
     $sütunlar = "";
     $degerler = "";
-    foreach($degerler = $key => $value)
+    foreach($degerler as $key => $value)
     {
       $sütunlar.=$key.',';
       $degeler.="'"$value."',";
@@ -90,6 +91,62 @@ class Veritabani
     $degerler = rtrim($degeler);
     $query = 'INSERT INTO'.$db.'('.$sütunlar.') VALUES ('.$degerler.')';
     return $query;
+  }
+  
+  /**
+   * Veritabanında olan bir veriyi güncellemek için update fonksiyonunu kullanırız.
+   * 
+   * $db => string
+   * $degerler => array
+   * $where => array
+   * $limit = int
+   * 
+   * return string
+   */
+  public function update($db, $degerler = array(), $where = array(), (int) $limit = NULL)
+  {
+    /**
+     * $key = sütun adı.
+     * $value = sütune işlenecek veri.
+     */
+     $update_degerleri = "";
+     foreach($degerler as $key => $value)
+     {
+        $update_degerleri.= "$key='$value',";
+     }
+     
+     $update_degerleri = rtrim($update_degerleri, ",");
+    
+     if(isset($where))
+     {
+       //birden fazla where varsa burası çalışır.
+       if(count($where) > 1)
+       {
+         foreach($where as $key => $value)
+         {
+            $where_degerleri.= "$key='$value' AND";
+         }
+         $where_degerleri = rtrim($where_degerleri, "AND");
+       }
+       else
+       {
+         foreach($where as $key => $value)
+         {
+            $where_degerleri.= "$key='$value'";
+         }
+       }
+     }
+     $query = "UPDATE".$db."SET".$update_degerleri."WHERE".$where_degerleri;
+     if(count($where) > 0)
+     {
+       $query.="WHERE".$where_Degerleri;
+     }
+     if(isset($limit))
+     {
+       $query.="LIMIT ".$limit;
+     }
+     
+     return $query;
   }
   
 }
