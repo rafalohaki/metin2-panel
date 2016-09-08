@@ -6,7 +6,7 @@ require_once('ayarlar.php');
 //klasör yapılarımızın sabitleri
 define("KLASOR_CLASSLARIM", "classlarim/");
 define("KLASOR_MODULLER", "moduller/");
-
+define("GUVENLIK", true);
 
 //classlarimizi çekelim
 require_once KLASOR_CLASSLARIM.Veritabani.php;
