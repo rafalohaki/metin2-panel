@@ -9,9 +9,9 @@ define("KLASOR_MODULLER", "moduller/");
 define("GUVENLIK", true);
 
 //classlarimizi çekelim
-require_once KLASOR_CLASSLARIM.Veritabani.php;
-require_once KLASOR_CLASSLARIM.Guvenlik.php;
-require_once KLASIR_CLASSLARIM.Fonksiyonlar.php;
+require_once KLASOR_CLASSLARIM."Veritabani.php";
+require_once KLASOR_CLASSLARIM."Guvenlik.php";
+require_once KLASIR_CLASSLARIM."Fonksiyonlar.php";
 
 //nesneleri oluştur.
 $db = new Veritabani;
