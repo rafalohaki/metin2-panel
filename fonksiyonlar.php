@@ -6,7 +6,7 @@ require_once('ayarlar.php');
 //klasör yapılarımızın sabitleri
 define("KLASOR_CLASSLARIM", "classlarim/");
 define("KLASOR_MODULLER", "moduller/");
-define("KLASOR_TEMA", "temalar/varsayilan");
+
 
 //classlarimizi çekelim
 require_once KLASOR_CLASSLARIM.Veritabani.php;
@@ -29,3 +29,5 @@ define("SITE_ACIKLAMA", $ayarlar->site_aciklama);
 define("SITE_ANAHTAR_KELIMELERI", $ayarlar->site_anahtar_kelimeleri);
 define("SITE_TEMASI", $ayarlar->site_temasi);
 define("SITE_MAIL", $ayarlar->site_mail);
+
+define("KLASOR_TEMA", "temalar/".SITE_TEMASI);
