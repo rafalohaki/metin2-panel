@@ -55,9 +55,9 @@ class Veritabani
     return mysql_query($string);
   }
   
-  public function fetch($db)
+  public function fetch($db, $diger)
   {
-    return mysql_fetch_object($this->query("SELECT * FROM $db"));
+    return mysql_fetch_object("SELECT * FROM $db".$diger);
   }
   
   public function fetchArray($string);
