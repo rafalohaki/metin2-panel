@@ -52,17 +52,17 @@ class Veritabani
   //Query fonksiyonları.....
   public function query($string)
   {
-    mysql_query($string);
+    return mysql_query($string);
   }
   
-  public function fetch($string)
+  public function fetch($db)
   {
-    mysql_fetch_object($string);
+    return mysql_fetch_object($this->query("SELECT * FROM $db"));
   }
   
   public function fetchArray($string);
   {
-    mysql_fetch_array($string);
+    return mysql_fetch_array($string);
   }
   
   /**
