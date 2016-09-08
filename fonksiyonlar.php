@@ -29,5 +29,6 @@ define("SITE_ACIKLAMA", $ayarlar->site_aciklama);
 define("SITE_ANAHTAR_KELIMELERI", $ayarlar->site_anahtar_kelimeleri);
 define("SITE_TEMASI", $ayarlar->site_temasi);
 define("SITE_MAIL", $ayarlar->site_mail);
+define("SITE_DIL", $ayarlar->site_dil);
 
 define("KLASOR_TEMA", "temalar/".SITE_TEMASI);
