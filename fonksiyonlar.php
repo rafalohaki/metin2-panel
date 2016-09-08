@@ -20,7 +20,7 @@ $fonk = new Fonksiyonlar;
 
 //ayarlar
 
-$ayarlar = $db->query($db->fetch(ayarlar));
+$ayarlar = $db->query($db->fetch('ayarlar));
 
 //temel ayarlar.
 define("SITE_ADI", $ayarlar->site_adi);
