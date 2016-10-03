@@ -35,6 +35,14 @@ class Tema
       {
         return $cssYolFile;
       }
+      else
+      {
+        return die($cssYolFile."konumundaki dosyayi kontrol ediniz.")
+      }
+    }
+    else
+    {
+      return die($this->TemaAl." temanızda css klasörü bulunmuyor. Lütfen di<inleri " )
     }
   }
 }
