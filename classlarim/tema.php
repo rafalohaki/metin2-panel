@@ -10,6 +10,7 @@ class Tema
   
   function __construct()
   {
+    $this->temaAl();
   }
   
   private function temaAl()
@@ -59,7 +60,7 @@ class Tema
       }
       else
       {
-        return die($jsYol." dizinindeki <b>$jsDosyasi</b> isimli dosyayi kontrol ediniz.)
+        return die($jsYol." dizinindeki <b>$jsDosyasi</b> isimli dosyayi kontrol ediniz. ");
       }
     }
     else
