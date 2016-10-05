@@ -3,8 +3,8 @@
 class Tema
 {
   protected $temaKlasor = "temalar/";
-  protected $gecerliTema = SITE_TEMASI;
-  protected $defaultTema = "default";
+  protected $gecerliTema = SITE_TEMASI."/";
+  protected $defaultTema = "default/";
   protected $cssYol = "css/";
   protected $jsYol = "js/";
   
@@ -37,12 +37,34 @@ class Tema
       }
       else
       {
-        return die($xcssYol2."konumundaki $cssDosyasi isimli dosyayi kontrol ediniz.")
+        return die($cssYol2." dizinindeki <b>$cssDosyasi</b> isimli dosyayi kontrol ediniz.")
       }
     }
     else
     {
-      return die($this->TemaAl." temanızda css klasörü bulunmuyor. Lütfen dizinleri kontrol ediniz." )
+      return die($this->TemaAl." temanızda css klasörü bulunmuyor. Lütfen dizinleri kontrol ediniz." );
+    }
+  }
+  
+  private function js_al($jsDosyasi)
+  {
+    $jsYol2 = $temaKlasor.$this->temaAl().$jsYol;
+    $jsYolFile = $temaKlasor.$this->temaAl().$jsYol.$cssDosyasi;
+    
+    if(is_dir($jsYol2))
+    {
+      if(file_exists($jsYolFile))
+      {
+        return $jsYolFile;
+      }
+      else
+      {
+        return die($jsYol." dizinindeki <b>$jsDosyasi</b> isimli dosyayi kontrol ediniz.)
+      }
+    }
+    else
+    {
+      return die($this->TemaAl." temanızda js klasörü bulunmuyor. Lütfen dizinleri kontrol ediniz.");
     }
   }
 }
