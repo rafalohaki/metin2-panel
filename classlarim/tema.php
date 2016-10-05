@@ -37,12 +37,12 @@ class Tema
       }
       else
       {
-        return die($cssYolFile."konumundaki dosyayi kontrol ediniz.")
+        return die($xcssYol2."konumundaki $cssDosyasi isimli dosyayi kontrol ediniz.")
       }
     }
     else
     {
-      return die($this->TemaAl." temanızda css klasörü bulunmuyor. Lütfen di<inleri " )
+      return die($this->TemaAl." temanızda css klasörü bulunmuyor. Lütfen dizinleri kontrol ediniz." )
     }
   }
 }
