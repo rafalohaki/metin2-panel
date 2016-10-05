@@ -1,6 +1,9 @@
 <?php
-$url = $_GET['sayfa'] ? $_GET['sayfa'] : 'anasayfa'
-$dosyaYol = "moduller/".$url.".php"
+$url = $_GET['sayfa'] ? $_GET['sayfa'] : 'anasayfa';
+$dosyaYol = "moduller/".$url.".php";
+
+global $tema;
+require_once $tema->temaAl();
 
 if(file_exists($dosyaYol))
 {
@@ -21,21 +24,6 @@ else
     $icerik->icerik();
   }
 }
+
+
 ?>
-
-<html>
-<head>
-  <title>Metin2 Title</title>
-</head>
-<body>
-  <head>
-    <div id="logo">
-      logo gelecek
-    </div>
-    <div id="ust_menu">
-      Menü gelecek
-    </div>
-  </head>
-</body>
-
-</html>
