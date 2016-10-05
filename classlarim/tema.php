@@ -64,7 +64,7 @@ class Tema
     }
     else
     {
-      return die($this->TemaAl." temanızda js klasörü bulunmuyor. Lütfen dizinleri kontrol ediniz.");
+      return die($this->TemaAl. " temanızda js klasörü bulunmuyor. Lütfen dizinleri kontrol ediniz." );
     }
   }
 }
