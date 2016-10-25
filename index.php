@@ -9,7 +9,6 @@ if(file_exists($dosyaYol))
 {
   require_once $dosyaYol;
   $icerik = new $url;
-  $icerik->icerik();
 }
 else
 {
@@ -21,9 +20,8 @@ else
   {
     require_once('moduller/anasayfa.php');
     $icerik = new Anasayfa;
-    $icerik->icerik();
   }
 }
 
-
+$tema->temaAl()."index.php";
 ?>
