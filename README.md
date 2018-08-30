@@ -1,2 +1,2 @@
 # metin2-panel
-Merin2 paneli
+Merin2 panel
